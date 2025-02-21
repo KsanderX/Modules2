@@ -63,7 +63,7 @@
             btnShowDialog.TabIndex = 3;
             btnShowDialog.Text = "ShowDialog";
             btnShowDialog.UseVisualStyleBackColor = true;
-            btnShowDialog.Click += btnShowDialog_Click;
+           // btnShowDialog.Click += btnShowDialog_Click;
             // 
             // btnAdd
             // 

@@ -14,18 +14,19 @@ namespace Lab2_Forms
         private void btnOK_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        public string Password => MyUserControl.tbPassword;
+        }        
+    
+        //string Password => MyUserControl.SecretText;
 
-        private void btnShowDialog_Click(object sender, EventArgs e)
-        {
-            MyForm dialogForm = new MyForm();
-            DialogResult result = dialogForm.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                MessageBox.Show("Пароль: " + dialogForm.Password);
-            }
-        }
+        //private void btnShowDialog_Click(object sender, EventArgs e)
+        //{
+        //    MyForm dialogForm = new MyForm();
+        //    DialogResult result = dialogForm.ShowDialog();
+        //    if (result == DialogResult.OK)
+        //    {
+        //        MessageBox.Show("Пароль: " + dialogForm.Password);
+        //    }
+        //}
 
     }
 }
