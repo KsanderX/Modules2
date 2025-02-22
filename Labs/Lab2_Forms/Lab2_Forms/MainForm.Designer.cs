@@ -48,10 +48,10 @@
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.AutoSize = true;
+            flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Location = new Point(21, 166);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(496, 100);
+            flowLayoutPanel1.Size = new Size(607, 256);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // label1
@@ -94,7 +94,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(533, 450);
+            ClientSize = new Size(666, 450);
             Controls.Add(lbtotalAges);
             Controls.Add(lbtotalRecords);
             Controls.Add(label2);

@@ -73,6 +73,7 @@
             // 
             tbID.Location = new Point(12, 27);
             tbID.Name = "tbID";
+            tbID.ReadOnly = true;
             tbID.Size = new Size(32, 23);
             tbID.TabIndex = 12;
             // 

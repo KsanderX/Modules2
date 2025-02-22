@@ -55,7 +55,7 @@
             // 
             btnDelete.Location = new Point(446, 46);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(65, 22);
+            btnDelete.Size = new Size(77, 22);
             btnDelete.TabIndex = 2;
             btnDelete.Text = "Удалить";
             btnDelete.UseVisualStyleBackColor = true;
@@ -65,7 +65,7 @@
             // 
             btnChange.Location = new Point(446, 17);
             btnChange.Name = "btnChange";
-            btnChange.Size = new Size(65, 23);
+            btnChange.Size = new Size(77, 23);
             btnChange.TabIndex = 1;
             btnChange.Text = "Изменить";
             btnChange.UseVisualStyleBackColor = true;
@@ -109,8 +109,9 @@
             // 
             // tbID
             // 
-            tbID.Location = new Point(0, 19);
+            tbID.Location = new Point(0, 17);
             tbID.Name = "tbID";
+            tbID.ReadOnly = true;
             tbID.Size = new Size(32, 23);
             tbID.TabIndex = 7;
             // 
@@ -118,6 +119,7 @@
             // 
             tbLastName.Location = new Point(38, 18);
             tbLastName.Name = "tbLastName";
+            tbLastName.ReadOnly = true;
             tbLastName.Size = new Size(100, 23);
             tbLastName.TabIndex = 8;
             // 
@@ -125,6 +127,7 @@
             // 
             tbFirstName.Location = new Point(155, 18);
             tbFirstName.Name = "tbFirstName";
+            tbFirstName.ReadOnly = true;
             tbFirstName.Size = new Size(100, 23);
             tbFirstName.TabIndex = 9;
             // 
@@ -132,6 +135,7 @@
             // 
             tbMiddleName.Location = new Point(270, 18);
             tbMiddleName.Name = "tbMiddleName";
+            tbMiddleName.ReadOnly = true;
             tbMiddleName.Size = new Size(100, 23);
             tbMiddleName.TabIndex = 10;
             // 
@@ -139,6 +143,7 @@
             // 
             tbAge.Location = new Point(376, 19);
             tbAge.Name = "tbAge";
+            tbAge.ReadOnly = true;
             tbAge.Size = new Size(50, 23);
             tbAge.TabIndex = 11;
             // 

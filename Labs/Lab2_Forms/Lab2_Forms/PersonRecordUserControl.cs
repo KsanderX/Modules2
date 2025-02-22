@@ -12,67 +12,61 @@ namespace Lab2_Forms
 {
     public partial class PersonRecordUserControl : UserControl
     {
-        public event EventHandler RecordDeleted;
-        public event EventHandler RecordUpdated;
-
-        private static int currentID = 0;
-
         public PersonRecordUserControl()
         {
             InitializeComponent();
         }
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public int Id { get; private set; }
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public string FirstName { get; private set; }
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public string LastName { get; private set; }
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public string MiddleName { get; private set; }
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public int Age { get; private set; }
-
-        public PersonRecordUserControl(int id, string firstName, string lastName, string middleName, int age)
+        public string Id
         {
-            InitializeComponent();
-            Id = ++currentID;
-            FirstName = firstName;
-            LastName = lastName;
-            MiddleName = middleName;
-            Age = age;
-            UpdateDisplay();
+            get { return tbID.Text; }
+            set { tbID.Text = value; }
+        }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public string LastName
+        {
+            get { return tbLastName.Text; }
+            set { tbLastName.Text = value; }
+        }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public string FirstName
+        {
+            get { return tbFirstName.Text; }
+            set { tbFirstName.Text = value; }
+        }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public string MiddleName
+        {
+            get { return tbMiddleName.Text; }
+            set { tbMiddleName.Text = value; }
+        }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public int Age
+        {
+            get
+            {
+                if (int.TryParse(tbAge.Text, out int age))
+                {
+                    return age;
+                }
+                return 0;
+            }
+            set { tbAge.Text = value.ToString(); }
         }
 
-        public void UpdateDisplay()
-        {
-            tbID.Text = Id.ToString();
-            tbFirstName.Text = FirstName;
-            tbLastName.Text = LastName;
-            tbMiddleName.Text = MiddleName;
-            tbAge.Text = Age.ToString();
-        }
+
+        public event EventHandler EditClicked;
+        public event EventHandler DeleteClicked;       
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            using (var dialog = new PersonRecordEditDialog(Id, FirstName, LastName, MiddleName, Age))
-            {
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    FirstName = dialog.FirstName;
-                    LastName = dialog.LastName;
-                    MiddleName = dialog.MiddleName;
-                    Age = dialog.Age;
-                    UpdateDisplay();
-                    RecordUpdated?.Invoke(this, EventArgs.Empty);
-                }
-            }
+          EditClicked?.Invoke(this, EventArgs.Empty);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            RecordDeleted?.Invoke(this, EventArgs.Empty);
-            this.Parent.Controls.Remove(this);
+            DeleteClicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }

@@ -16,19 +16,49 @@ namespace Lab2_Forms
         {
             InitializeComponent();
         }
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public string FirstName { get; private set; }
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public string LastName { get; private set; }
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public string MiddleName { get; private set; }
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public int Age { get; private set; }
 
-        public PersonRecordEditDialog(int id,string firstName, string lastName, string middleName, int age)
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public string Id
+        {
+            get { return tbID.Text; }
+            set { tbID.Text = value; }
+        }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public string LastName
+        {
+            get { return tbLastName.Text; }
+            set { tbLastName.Text = value; }
+        }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public string FirstName
+        {
+            get { return tbFirstName.Text; }
+            set { tbFirstName.Text = value; }
+        }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public string MiddleName
+        {
+            get { return tbMiddleName.Text; }
+            set { tbMiddleName.Text = value; }
+        }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public int Age
+        {
+            get
+            {
+                if (int.TryParse(tbAge.Text, out int age))
+                {
+                    return age;
+                }
+                return 0;
+            }
+            set { tbAge.Text = value.ToString(); }
+        }
+
+        public PersonRecordEditDialog(string id, string lastName, string firstName, string middleName, int age)
         {
             InitializeComponent();
-            tbID.Text = id.ToString();
+            tbID.Text = id;
             tbLastName.Text = lastName;
             tbFirstName.Text = firstName;
             tbMiddleName.Text = middleName;
@@ -37,10 +67,6 @@ namespace Lab2_Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            FirstName = tbFirstName.Text;
-            LastName = tbLastName.Text;
-            MiddleName = tbMiddleName.Text;
-            Age = int.Parse(tbAge.Text);
             DialogResult = DialogResult.OK;
             Close();
         }

@@ -12,59 +12,84 @@ namespace Lab2_Forms
 {
     public partial class MainForm : Form
     {
-        private int totalRecords = 0;
-        private int totalAges = 0;
+        private int nextID = 1;
         public MainForm()
         {
             InitializeComponent();
+            UpdateStatistics();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var personControl = new PersonRecordEditDialog(1, "Имя", "Фамилия", "Отчество", 20);
+            PersonRecordUserControl personRecord = new PersonRecordUserControl();
 
-            personControl.RecordDeleted += RecordDeletedHandler;
-            personControl.RecordUpdated += RecordUpdatedHandler;
+            personRecord.Id = nextID.ToString();
+            personRecord.LastName = "Александров";
+            personRecord.FirstName = "Александр";
+            personRecord.MiddleName = "Александрович";
+            personRecord.Age = 20;
 
-            flowLayoutPanel1.Controls.Add(personControl);
 
-            totalRecords++;
-            totalAges++;
+            personRecord.EditClicked += PersonRecord_EditClicked;
+            personRecord.DeleteClicked += PersonRecord_DeleteClicked;
 
-            UpdateTotalDisplay();
+            flowLayoutPanel1.Controls.Add(personRecord);         
+
+            nextID++;
+
+            UpdateStatistics();
         }
-
-        private void RecordDeletedHandler(object sender, EventArgs e)
+        private void PersonRecord_EditClicked(object sender, EventArgs e)
         {
-            totalRecords--;
-            if(sender is PersonRecordUserControl record)
+            PersonRecordUserControl personRecord = (PersonRecordUserControl)sender;
+
+            PersonRecordEditDialog editDialog = new PersonRecordEditDialog(
+                personRecord.Id,
+                personRecord.LastName,
+                personRecord.FirstName,
+                personRecord.MiddleName,
+                personRecord.Age
+            );
+
+            if (editDialog.ShowDialog() == DialogResult.OK)
             {
-                totalAges -= record.Age;
+                personRecord.Id = editDialog.Id;
+                personRecord.LastName = editDialog.LastName;
+                personRecord.FirstName = editDialog.FirstName;
+                personRecord.MiddleName = editDialog.MiddleName;
+                personRecord.Age = editDialog.Age;
+
+                UpdateStatistics();
             }
-            UpdateTotalDisplay();
-        }
-        private void RecordUpdatedHandler(object sender, EventArgs e)
-        {
-            RecalculateTotalAge();
         }
 
-        private void UpdateTotalDisplay()
+        private void PersonRecord_DeleteClicked(object sender, EventArgs e)
         {
-            lbtotalRecords.Text = $"{totalRecords}";
-            lbtotalAges.Text = $"{totalAges}";
-        }
+            PersonRecordUserControl personRecord = (PersonRecordUserControl)sender;
 
-        private void RecalculateTotalAge()
+            // Отписываемся от событий
+            personRecord.EditClicked -= PersonRecord_EditClicked;
+            personRecord.DeleteClicked -= PersonRecord_DeleteClicked;
+
+            flowLayoutPanel1.Controls.Remove(personRecord);
+
+            UpdateStatistics();
+        }
+        private void UpdateStatistics()
         {
-            totalAges = 0;
-            foreach (var control in flowLayoutPanel1.Controls)
+            int recordCount = flowLayoutPanel1.Controls.Count;
+            int totalAge = 0;
+
+            foreach (Control control in flowLayoutPanel1.Controls)
             {
-                if (control is PersonRecordUserControl record)
+                if (control is PersonRecordUserControl personRecord)
                 {
-                    totalAges += record.Age;
+                    totalAge += personRecord.Age;
                 }
             }
-            UpdateTotalDisplay();
+
+            lbtotalRecords.Text = $"{recordCount}";
+            lbtotalAges.Text = $"{totalAge}";
         }
 
     }
