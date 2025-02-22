@@ -64,9 +64,32 @@ namespace Lab2_Forms
             tbMiddleName.Text = middleName;
             tbAge.Text = age.ToString();
         }
+        private void tbAge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (!int.TryParse(tbAge.Text, out int age))
+            {
+                MessageBox.Show("Ошибка ввода!", "Введите корректный возраст.");
+                return;
+            }
+            if (age < 0)
+            {
+                MessageBox.Show("Ошибка ввода!", "Возраст не должен быть отрицательным.");
+                return;
+            }
+            if (age > 150)
+            {
+                MessageBox.Show("Ого! Вы старше, чем сама идея пенсии! Давайте уложимся в 150 лет, ладно?");
+                return;
+            }
+
             DialogResult = DialogResult.OK;
             Close();
         }

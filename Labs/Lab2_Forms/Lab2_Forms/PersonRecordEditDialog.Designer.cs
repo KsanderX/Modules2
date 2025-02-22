@@ -47,6 +47,7 @@
             tbAge.Name = "tbAge";
             tbAge.Size = new Size(43, 23);
             tbAge.TabIndex = 16;
+            tbAge.KeyPress += tbAge_KeyPress;
             // 
             // tbMiddleName
             // 

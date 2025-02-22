@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            myUserControl2 = new MyUserControl();
+            myUserControl = new MyUserControl();
             btnOK = new Button();
             btnShowDialog = new Button();
             btnAdd = new Button();
@@ -36,14 +36,14 @@
             // 
             // myUserControl2
             // 
-            myUserControl2.Label = "Password";
-            myUserControl2.Location = new Point(55, 39);
-            myUserControl2.MaximumSize = new Size(10000, 50);
-            myUserControl2.MinimumSize = new Size(150, 50);
-            myUserControl2.Name = "myUserControl2";
-            myUserControl2.SecretText = "";
-            myUserControl2.Size = new Size(160, 50);
-            myUserControl2.TabIndex = 1;
+            myUserControl.Label = "Password";
+            myUserControl.Location = new Point(55, 39);
+            myUserControl.MaximumSize = new Size(10000, 50);
+            myUserControl.MinimumSize = new Size(150, 50);
+            myUserControl.Name = "myUserControl2";
+            myUserControl.SecretText = "";
+            myUserControl.Size = new Size(160, 50);
+            myUserControl.TabIndex = 1;
             // 
             // btnOK
             // 
@@ -63,7 +63,7 @@
             btnShowDialog.TabIndex = 3;
             btnShowDialog.Text = "ShowDialog";
             btnShowDialog.UseVisualStyleBackColor = true;
-           // btnShowDialog.Click += btnShowDialog_Click;
+            btnShowDialog.Click += btnShowDialog_Click;
             // 
             // btnAdd
             // 
@@ -82,7 +82,7 @@
             Controls.Add(btnAdd);
             Controls.Add(btnShowDialog);
             Controls.Add(btnOK);
-            Controls.Add(myUserControl2);
+            Controls.Add(myUserControl);
             Name = "MyForm";
             Text = "Form1";
             ResumeLayout(false);
@@ -90,7 +90,7 @@
 
         #endregion
 
-        private MyUserControl myUserControl2;
+        private MyUserControl myUserControl;
         private Button btnOK;
         private Button btnShowDialog;
         private Button btnAdd;

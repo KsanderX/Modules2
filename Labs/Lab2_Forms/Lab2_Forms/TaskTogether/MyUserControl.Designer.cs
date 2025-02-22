@@ -35,7 +35,6 @@
             // 
             // tbPassword
             // 
-            tbPassword.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             tbPassword.Location = new Point(3, 18);
             tbPassword.Name = "tbPassword";
             tbPassword.PasswordChar = '*';
