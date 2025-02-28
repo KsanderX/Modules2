@@ -28,43 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btSignIn = new Button();
-            btSignUp = new Button();
+            btLogIn = new Button();
+            btRegister = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
-            // btSignIn
+            // btLogIn
             // 
-            btSignIn.Location = new Point(74, 54);
-            btSignIn.Name = "btSignIn";
-            btSignIn.Size = new Size(75, 23);
-            btSignIn.TabIndex = 0;
-            btSignIn.Text = "Вход";
-            btSignIn.UseVisualStyleBackColor = true;
+            btLogIn.Location = new Point(93, 101);
+            btLogIn.Name = "btLogIn";
+            btLogIn.Size = new Size(88, 23);
+            btLogIn.TabIndex = 0;
+            btLogIn.Text = "Вход";
+            btLogIn.UseVisualStyleBackColor = true;
+            btLogIn.Click += btLogIn_Click;
             // 
-            // btSignUp
+            // btRegister
             // 
-            btSignUp.Location = new Point(74, 98);
-            btSignUp.Name = "btSignUp";
-            btSignUp.Size = new Size(88, 23);
-            btSignUp.TabIndex = 1;
-            btSignUp.Text = "Регистрация";
-            btSignUp.UseVisualStyleBackColor = true;
+            btRegister.Location = new Point(93, 153);
+            btRegister.Name = "btRegister";
+            btRegister.Size = new Size(88, 23);
+            btRegister.TabIndex = 1;
+            btRegister.Text = "Регистрация";
+            btRegister.UseVisualStyleBackColor = true;
+            btRegister.Click += btRegister_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(84, 41);
+            label1.Name = "label1";
+            label1.Size = new Size(118, 15);
+            label1.TabIndex = 2;
+            label1.Text = "Добро пожаловать! ";
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btSignUp);
-            Controls.Add(btSignIn);
+            ClientSize = new Size(295, 213);
+            Controls.Add(label1);
+            Controls.Add(btRegister);
+            Controls.Add(btLogIn);
+            MaximumSize = new Size(311, 252);
+            MinimumSize = new Size(311, 252);
             Name = "MainForm";
-            Text = "Form1";
+            Text = "Главная страница";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button btSignIn;
-        private Button btSignUp;
+        private Button btLogIn;
+        private Button btRegister;
+        private Label label1;
     }
 }
