@@ -23,7 +23,7 @@ namespace Lab3
             services.AddTransient<LoginDialog>();
             services.AddTransient<RegisterDialog>();
 
-            services.AddScoped<IAuthManager, ListAuthManager>();
+            services.AddScoped<IAuthManager, RealAuthManager>();
 
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlite("Data source=./app.db"));
