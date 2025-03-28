@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Lab3.AuthManager;
 
 namespace Lab3
 {
@@ -36,8 +37,8 @@ namespace Lab3
             }
 
         }
-              
-       
+
+
         private bool _showPassword = false;
         private void btnShowPassword_Click(object sender, EventArgs e)
         {
@@ -51,7 +52,12 @@ namespace Lab3
                 tbPassword.PasswordChar = '*';
             }
         }
+
+        private void LoginDialog_Load(object sender, EventArgs e)
+        {
+
+        }
     }
-    
+
 
 }

@@ -110,6 +110,7 @@
             MinimumSize = new Size(200, 220);
             Name = "LoginDialog";
             Text = "Вход";
+            Load += LoginDialog_Load;
             ResumeLayout(false);
             PerformLayout();
         }

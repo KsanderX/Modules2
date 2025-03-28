@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Sqlite;
 using System.Windows.Forms;
 using System;
+using Lab3.AuthManager;
 
 namespace Lab3
 {

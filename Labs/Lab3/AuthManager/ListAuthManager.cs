@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab3
+namespace Lab3.AuthManager
 {
     public class ListAuthManager : IAuthManager
     {
@@ -14,7 +14,7 @@ namespace Lab3
             public int Id { get; set; }
             public string Login { get; set; }
             public string Password { get; set; }
-        }        
+        }
 
         public ListAuthManager()
         {
