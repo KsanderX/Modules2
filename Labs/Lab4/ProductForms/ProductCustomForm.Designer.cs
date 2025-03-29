@@ -1,6 +1,6 @@
 ﻿namespace Lab4
 {
-    partial class MaterialsDataGridForm
+    partial class ProductCustomForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            flowLayoutPanel1 = new FlowLayoutPanel();
             btnSave = new Button();
-            dataGridView1 = new DataGridView();
             btnBack = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Location = new Point(12, 71);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(577, 333);
+            flowLayoutPanel1.TabIndex = 0;
             // 
             // btnSave
             // 
-            btnSave.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnSave.Location = new Point(11, 4);
+            btnSave.Location = new Point(3, 12);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(70, 23);
-            btnSave.TabIndex = 0;
+            btnSave.Size = new Size(75, 23);
+            btnSave.TabIndex = 1;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 75);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(455, 211);
-            dataGridView1.TabIndex = 1;
-            // 
             // btnBack
             // 
-            btnBack.Location = new Point(392, 4);
+            btnBack.Location = new Point(401, 12);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(75, 23);
             btnBack.TabIndex = 2;
@@ -63,24 +60,23 @@
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
             // 
-            // MaterialsDataGridForm
+            // ProductCustomForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(530, 352);
+            ClientSize = new Size(601, 448);
             Controls.Add(btnBack);
-            Controls.Add(dataGridView1);
             Controls.Add(btnSave);
-            Name = "MaterialsDataGridForm";
-            Text = "MaterialsDataGridForm";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Controls.Add(flowLayoutPanel1);
+            Name = "ProductCustomForm";
+            Text = "ProductCustomForm";
             ResumeLayout(false);
         }
 
         #endregion
 
+        private FlowLayoutPanel flowLayoutPanel1;
         private Button btnSave;
-        private DataGridView dataGridView1;
         private Button btnBack;
     }
 }

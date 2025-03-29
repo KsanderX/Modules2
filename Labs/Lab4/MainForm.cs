@@ -9,8 +9,8 @@ namespace Lab4
         private readonly IDataService _dataService;
         public MainForm(IDataService dataService)
         {
-            _dataService = dataService;
             InitializeComponent();
+            _dataService = dataService;
         }
         private void btnMaterialsOpenDlg_Click(object sender, EventArgs e)
         {
@@ -28,5 +28,20 @@ namespace Lab4
             this.Close();
         }
 
+        private void btnMaterialsCustomDlg_Click(object sender, EventArgs e)
+        {
+            var materialsForm = new MaterialsCustomForm(_dataService);
+            this.Hide();
+            materialsForm.ShowDialog();
+            this.Show();
+        }
+
+        private void btnProductsCustomDlg_Click(object sender, EventArgs e)
+        {
+            var productsForm = new ProductCustomForm(_dataService);
+            this.Hide();
+            productsForm.ShowDialog();
+            this.Show();
+        }
     }
 }

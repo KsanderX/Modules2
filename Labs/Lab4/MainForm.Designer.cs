@@ -36,7 +36,7 @@
             // 
             // btnMaterialsOpenDlg
             // 
-            btnMaterialsOpenDlg.Location = new Point(95, 82);
+            btnMaterialsOpenDlg.Location = new Point(23, 25);
             btnMaterialsOpenDlg.Name = "btnMaterialsOpenDlg";
             btnMaterialsOpenDlg.Size = new Size(143, 101);
             btnMaterialsOpenDlg.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // btnProductOpenDlg
             // 
-            btnProductOpenDlg.Location = new Point(353, 82);
+            btnProductOpenDlg.Location = new Point(255, 25);
             btnProductOpenDlg.Name = "btnProductOpenDlg";
             btnProductOpenDlg.Size = new Size(143, 101);
             btnProductOpenDlg.TabIndex = 1;
@@ -56,27 +56,29 @@
             // 
             // btnMaterialsCustomDlg
             // 
-            btnMaterialsCustomDlg.Location = new Point(95, 244);
+            btnMaterialsCustomDlg.Location = new Point(23, 187);
             btnMaterialsCustomDlg.Name = "btnMaterialsCustomDlg";
             btnMaterialsCustomDlg.Size = new Size(143, 99);
             btnMaterialsCustomDlg.TabIndex = 2;
             btnMaterialsCustomDlg.Text = "Materials custom open";
             btnMaterialsCustomDlg.UseVisualStyleBackColor = true;
+            btnMaterialsCustomDlg.Click += btnMaterialsCustomDlg_Click;
             // 
             // btnProductsCustomDlg
             // 
-            btnProductsCustomDlg.Location = new Point(353, 244);
+            btnProductsCustomDlg.Location = new Point(255, 187);
             btnProductsCustomDlg.Name = "btnProductsCustomDlg";
             btnProductsCustomDlg.Size = new Size(143, 99);
             btnProductsCustomDlg.TabIndex = 3;
             btnProductsCustomDlg.Text = "Products custom open";
             btnProductsCustomDlg.UseVisualStyleBackColor = true;
+            btnProductsCustomDlg.Click += btnProductsCustomDlg_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(594, 421);
+            ClientSize = new Size(423, 310);
             Controls.Add(btnProductsCustomDlg);
             Controls.Add(btnMaterialsCustomDlg);
             Controls.Add(btnProductOpenDlg);
