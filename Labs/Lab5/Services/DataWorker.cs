@@ -10,27 +10,24 @@ namespace Lab5.Services
 {
     public class DataWorker : IDbWorker
     {
-        public IEnumerable<Material> GetMaterials()
+        private AppDbContext _appDbContext;
+
+        public DataWorker()
         {
-            using (AppDbContext db = new AppDbContext())
-            {
-                return db.Materials.ToList();
-            }
+            _appDbContext = new AppDbContext();
+        }
+        public List<Material> GetMaterials()
+        {
+            return _appDbContext.Materials.ToList();
         }
 
-        public IEnumerable<Product> GetProducts()
+        public List<Product> GetProducts()
         {
-            using (AppDbContext db = new AppDbContext())
-            {
-                return db.Products.Include(p => p.Materials).ToList();
-            }
+            return _appDbContext.Products.ToList();
         }
         public void SaveChanged()
         {
-            using (AppDbContext db = new AppDbContext())
-            {
-                db.SaveChanges();
-            }
+            _appDbContext.SaveChanges();
         }
     }
 }

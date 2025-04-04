@@ -13,10 +13,12 @@ namespace Lab5;
 public partial class MainWindow : Window
 {
     private AppDbContext _context;
-    public MainWindow()
+    private IDbWorker _dbWorker;
+    public MainWindow(IDbWorker dbWorker)
     {
         InitializeComponent();
         _context = new AppDbContext();
+        _dbWorker = dbWorker;
     }
 
     private void btnOpenDataGridMaterials_Click(object sender, RoutedEventArgs e)
@@ -33,6 +35,17 @@ public partial class MainWindow : Window
         dataGridWindowWithMaterials.ShowDialog();
     }
 
+    private void btnOpenDataGridMaterials2_Click(object sender, RoutedEventArgs e)
+    {
+        var material = new MaterialsDataGridWindow(_dbWorker);
+        material.ShowDialog();
+    }
+
+    private void btnOpenDataGridProducts2_Click(object sender, RoutedEventArgs e)
+    {
+        var product = new ProductsDataGridWindow();
+        product.ShowDialog();
+    }
 }
 
 

@@ -40,5 +40,13 @@ namespace Lab4
             _dataService.SaveChanges();
             MessageBox.Show("Save Changes");
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            var form = new MainForm(_dataService);
+            this.Hide();
+            form.ShowDialog();
+            this.Close();    
+        }
     }
 }

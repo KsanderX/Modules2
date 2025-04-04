@@ -30,6 +30,7 @@
         {
             btnSave = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            btnBack = new Button();
             SuspendLayout();
             // 
             // btnSave
@@ -49,11 +50,22 @@
             flowLayoutPanel1.Size = new Size(499, 386);
             flowLayoutPanel1.TabIndex = 2;
             // 
+            // btnBack
+            // 
+            btnBack.Location = new Point(423, 12);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(75, 23);
+            btnBack.TabIndex = 3;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
             // MaterialsCustomForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(567, 479);
+            Controls.Add(btnBack);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(btnSave);
             Name = "MaterialsCustomForm";
@@ -65,5 +77,6 @@
 
         private Button btnSave;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Button btnBack;
     }
 }

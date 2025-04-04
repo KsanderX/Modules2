@@ -33,7 +33,7 @@ namespace Lab4
             var materialsForm = new MaterialsCustomForm(_dataService);
             this.Hide();
             materialsForm.ShowDialog();
-            this.Show();
+            this.Close();
         }
 
         private void btnProductsCustomDlg_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace Lab4
             var productsForm = new ProductCustomForm(_dataService);
             this.Hide();
             productsForm.ShowDialog();
-            this.Show();
+            this.Close();
         }
     }
 }

@@ -9,8 +9,8 @@ namespace Lab5.Services
 {
     public interface IDbWorker
     {
-        public IEnumerable<Product> GetProducts();
-        public IEnumerable<Material> GetMaterials();
+        public List<Product> GetProducts();
+        public List<Material> GetMaterials();
         public void SaveChanged();
     }
 }

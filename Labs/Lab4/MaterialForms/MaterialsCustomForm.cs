@@ -37,13 +37,21 @@ namespace Lab4
             var productForm = new ProductCustomForm(_dataService);
             this.Hide();
             productForm.ShowDialog();
-            this.Show();
+            this.ShowDialog();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             _dataService.SaveChanges();
             MessageBox.Show("Save Changed");
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            var form = new MainForm(_dataService);
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
         }
     }
 }

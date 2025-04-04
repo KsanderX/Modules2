@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Lab5.Services;
 
 namespace Lab5
 {
@@ -19,9 +20,16 @@ namespace Lab5
     /// </summary>
     public partial class MaterialsDataGridWindow : Window
     {
-        public MaterialsDataGridWindow()
+        private IDbWorker _bWorker;
+        public MaterialsDataGridWindow(IDbWorker dbWorker)
         {
             InitializeComponent();
+            _bWorker = dbWorker;
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
