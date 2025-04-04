@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Lab5.Services
 {
-    public interface IDataService
+    public interface IDbWorker
     {
-        public List<Material> GetMaterials();
-        public List<Product> GetProducts();
-        public void SaveChanges();
+        public IEnumerable<Product> GetProducts();
+        public IEnumerable<Material> GetMaterials();
+        public void SaveChanged();
     }
 }

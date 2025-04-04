@@ -1,5 +1,4 @@
-﻿using Lab5.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,21 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Lab5
 {
     /// <summary>
-    /// Логика взаимодействия для MaterialDataGrid.xaml
+    /// Логика взаимодействия для MaterialsDataGridWindow.xaml
     /// </summary>
-    public partial class MaterialDataGrid : Page
+    public partial class MaterialsDataGridWindow : Window
     {
-        private readonly IDataService _dataService;
-        public MaterialDataGrid(IDataService dataService)
+        public MaterialsDataGridWindow()
         {
             InitializeComponent();
-            _dataService = dataService;
         }
     }
 }

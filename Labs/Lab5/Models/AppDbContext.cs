@@ -12,10 +12,15 @@ namespace Lab5.Models
         public DbSet<Material> Materials { get; set; }
         public DbSet<Product> Products { get; set; }
 
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        public AppDbContext() 
         {
             Database.EnsureCreated();
         }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=Lab5;Integrated Security=True;Trust Server Certificate=True");
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Material>().HasData(

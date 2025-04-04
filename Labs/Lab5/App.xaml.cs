@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Lab5.Services;
+using Microsoft.Extensions.DependencyInjection;
 using System.Configuration;
 using System.Data;
 using System.Windows;
@@ -9,18 +10,18 @@ namespace Lab5;
 /// Interaction logic for App.xaml
 /// </summary>
 public partial class App : Application
-{
-    private readonly IServiceProvider _serviceProvider;
-    public App()
+{   
+    protected override void OnStartup(StartupEventArgs e)  //обработчик ивента startUp
     {
         var services = new ServiceCollection();
         services.AddTransient<MainWindow>();
-        _serviceProvider = services.BuildServiceProvider();
-    }
-    protected override void OnStartup(StartupEventArgs e)  //обработчик ивента startUp
-    {
-        var window = new MainWindow();
-        window.Show();
+        services.AddTransient<DataGridWindow>();
+        services.AddScoped<IDbWorker, DataWorker>();
+
+        var serviceProvider = services.BuildServiceProvider();
+
+        var mainWindow = serviceProvider.GetRequiredService<MainWindow>();
+        mainWindow.Show();
     }
 }
 
