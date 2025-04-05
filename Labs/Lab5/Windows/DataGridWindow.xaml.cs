@@ -1,20 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Lab5.Models;
-using Lab5.Services;
 
 namespace Lab5
 {
@@ -25,7 +11,7 @@ namespace Lab5
     {
         private IEnumerable _itemsSource;
         private AppDbContext _context;
-
+        //sada
         public DataGridWindow(IEnumerable itemSourse, AppDbContext context)
         {
             InitializeComponent();

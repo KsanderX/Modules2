@@ -3,7 +3,6 @@ using Lab5.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Windows;
 
-
 namespace Lab5;
 
 /// <summary>
