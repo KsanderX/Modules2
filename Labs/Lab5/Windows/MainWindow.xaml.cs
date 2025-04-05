@@ -1,7 +1,6 @@
 ﻿using Lab5.Models;
 using Lab5.Services;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
 
 
@@ -34,16 +33,17 @@ public partial class MainWindow : Window
         var dataGridWindowWithMaterials = new DataGridWindow(findProducts, _context);
         dataGridWindowWithMaterials.ShowDialog();
     }
-
     private void btnOpenDataGridMaterials2_Click(object sender, RoutedEventArgs e)
     {
         var material = new MaterialsDataGridWindow(_dbWorker);
+        material.DataContext = _dbWorker.GetMaterials();
         material.ShowDialog();
     }
 
     private void btnOpenDataGridProducts2_Click(object sender, RoutedEventArgs e)
     {
-        var product = new ProductsDataGridWindow();
+        var product = new ProductsDataGridWindow(_dbWorker);
+        product.DataContext = _dbWorker.GetProducts();
         product.ShowDialog();
     }
 }

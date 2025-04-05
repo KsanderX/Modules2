@@ -24,19 +24,19 @@ namespace Lab5
     public partial class DataGridWindow : Window
     {
         private IEnumerable _itemsSource;
-        private AppDbContext _appDbContext;
-       
-        public DataGridWindow(IEnumerable itemsSource, AppDbContext appDbContext )
+        private AppDbContext _context;
+
+        public DataGridWindow(IEnumerable itemSourse, AppDbContext context)
         {
             InitializeComponent();
-            _itemsSource = itemsSource;          
+            _itemsSource = itemSourse;
             dataGrid.ItemsSource = _itemsSource;
-            _appDbContext = appDbContext;
+            _context = context;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            _appDbContext.SaveChanges();
+            _context.SaveChanges();
         }
     }
 }

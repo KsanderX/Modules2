@@ -23,7 +23,20 @@ namespace Lab5.Services
 
         public List<Product> GetProducts()
         {
-            return _appDbContext.Products.ToList();
+            return _appDbContext.Products.Include(p => p.Materials).ToList();
+        }
+        public Material GetMaterialId(int id)
+        {
+            return _appDbContext.Materials.Where(m => m.Id == id).FirstOrDefault();
+        }
+
+        public List<Product> GetProductsMaterial(Material material)
+        {
+            if (material == null)
+            {
+                return new List<Product>();
+            }
+            return _appDbContext.Products.Where(p => p.MaterialId == material.Id).ToList();
         }
         public void SaveChanged()
         {

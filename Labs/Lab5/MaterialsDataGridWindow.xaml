@@ -5,23 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab5"
         mc:Ignorable="d"
-        Title="MaterialsDataGridWindow" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="DataGridMaterials" Margin="50,69,51,43">
+        Title="MaterialsDataGridWindow" Height="450" Width="433">
+    <Grid Margin="0,0,15,0">
+        <DataGrid x:Name="DataGridMaterials" AutoGenerateColumns="False" Margin="50,69,38,43" ItemsSource="{Binding }">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="50,21,0,0" VerticalAlignment="Top" RenderTransformOrigin="-10.535,-0.265" Height="19" Width="63" Click="btnName_Click">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.078"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="50,21,0,0" VerticalAlignment="Top" RenderTransformOrigin="-10.535,-0.265" Height="19" Width="63" Click="btnSave_Click"/>
     </Grid>
 </Window>
