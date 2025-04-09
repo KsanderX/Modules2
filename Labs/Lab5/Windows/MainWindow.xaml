@@ -5,12 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab5"
         mc:Ignorable="d"
-        Title="Main" Height="369" Width="563">
-    <Grid>
+        Title="Main" Height="520" Width="563">
+    <Grid Margin="0,0,0,-16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="369*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <Button x:Name ="btnOpenDataGridMaterials" Click="btnOpenDataGridMaterials_Click" Content="Data Grid Material" HorizontalAlignment="Left" Margin="78,60,0,0" VerticalAlignment="Top" Height="75" Width="140"/>
         <Button x:Name ="btnOpenDataGridProducts" Click ="btnOpenDataGridProducts_Click" Content="Data Grid Product" HorizontalAlignment="Left" Margin="350,61,0,0" VerticalAlignment="Top" Height="74" Width="140"/>
         <Button x:Name ="btnOpenDataGridMaterials_2" Click="btnOpenDataGridMaterials2_Click" Content="Data Grid Material 2" HorizontalAlignment="Left" Margin="78,220,0,0" VerticalAlignment="Top" Height="75" Width="140"/>
         <Button x:Name ="btnOpenDataGridProducts_2" Click="btnOpenDataGridProducts2_Click" Content="Data Grid Product 2" HorizontalAlignment="Left" Margin="350,220,0,0" VerticalAlignment="Top" Height="75" Width="140"/>
+        <Button x:Name ="btnOpenListMaterials" Content="Open List Materials" HorizontalAlignment="Left" Margin="78,361,0,0" VerticalAlignment="Top" Height="75" Width="140" Click="btnOpenListMaterials_Click"/>
+        <Button x:Name ="btnOpenListProducts" Content="Open List Products" HorizontalAlignment="Left" Margin="350,361,0,0" VerticalAlignment="Top" Height="75" Width="140" RenderTransformOrigin="1.36,1.533" Click="btnOpenListProducts_Click"/>
 
 
     </Grid>

@@ -12,6 +12,7 @@ public partial class MainWindow : Window
 {
     private AppDbContext _context;
     private IDbWorker _dbWorker;
+    private Material _material;
     public MainWindow(IDbWorker dbWorker)
     {
         InitializeComponent();
@@ -45,6 +46,18 @@ public partial class MainWindow : Window
         product.DataContext = _dbWorker.GetProducts();
         product.ShowDialog();
     }
+    private void btnOpenListMaterials_Click(object sender, RoutedEventArgs e)
+    {
+        var listMaterials = new ListMaterials(_dbWorker);
+        listMaterials.ShowDialog();
+    }
+
+    private void btnOpenListProducts_Click(object sender, RoutedEventArgs e)
+    {
+        var listProducts = new ListProducts(_dbWorker, _material);
+        listProducts.ShowDialog();
+    }
+
 }
 
 

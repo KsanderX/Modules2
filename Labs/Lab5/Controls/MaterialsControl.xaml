@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Lab5.Controls.MaterialsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Lab5.Controls"
+             mc:Ignorable="d" Height="212" Width="852">
+    <Grid Margin="0,0,606,0" Height="212" VerticalAlignment="Center">
+        <StackPanel HorizontalAlignment="Center" Orientation="Vertical" VerticalAlignment="Center" Height="171" Width="192">
+            <Label Background="AliceBlue" Content="Id" Height="30" Width="130"/>
+
+            <TextBox x:Name="tbId" Text="{Binding Id}"  Width="130" Height="30"/>
+            <Label Background="AliceBlue" Content="Name" Height="30" Width="130"/>
+            <TextBox  Text="{Binding Name}" Height="30" Width="130" />
+            <Button x:Name="btnOpenProducts" Content="Open Products" RenderTransformOrigin="-7.47,0.601" Height="30" Width="130" Click="btnOpenProducts_Click_1"/>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

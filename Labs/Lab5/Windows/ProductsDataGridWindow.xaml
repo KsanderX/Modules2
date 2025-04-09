@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab5"
         mc:Ignorable="d"
-        Title="ProductsDataGridWindow" Height="298" Width="332">
+        Title="ProductsDataGridWindow" Height="298" Width="380">
     <Grid Margin="0,0,10,-6">
         <DataGrid x:Name="DataGridProducts" AutoGenerateColumns="False" Margin="33,49,2,43" ItemsSource="{Binding}">
             <DataGrid.Columns>
@@ -13,7 +13,7 @@
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="Price" Binding="{Binding Price}"/>
                 <DataGridTextColumn Header="Material ID" Width="*" Binding="{Binding MaterialId}"/>
-                <DataGridTextColumn Header="Materials" Width="*" Binding="{Binding Materials}"/>
+                <DataGridTextColumn Header="Materials" Width="*" Binding="{Binding Materials.Name}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="50,10,0,0" VerticalAlignment="Top" Width="57" Click="btnSave_Click"/>
