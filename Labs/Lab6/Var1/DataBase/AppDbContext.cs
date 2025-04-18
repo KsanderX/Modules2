@@ -8,6 +8,7 @@ namespace Var1.DataBase
         public DbSet<Request> Requests { get; set; }
         public DbSet<Role> Role { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<CarType> CarTypes { get; set; }    
 
         public AppDbContext()
         {
@@ -20,17 +21,6 @@ namespace Var1.DataBase
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Request>().HasData(
-                new Request
-                {
-                    ID = 1,
-                    Number = "12314",
-                    DateAdd = DateTime.Now,
-                    TypeCar = "Cedan ",
-                    ModelCar = "Toyota",
-                    ProblemDescription = "Побитое крыло",
-                    PhoneNumber = 894231345
-                });
             modelBuilder.Entity<Role>().HasData(
                   new Role { Id = 1, Type = "Admin" },
                   new Role { Id = 2, Type = "Client" },
@@ -39,22 +29,23 @@ namespace Var1.DataBase
             modelBuilder.Entity<User>().HasData(
                 new User
                 {
-                    Id = 1,
-                    Name = "Alexander Borodach",
-                    Login = "login",
-                    Password = "admin",
-                    RoleId = 1
+                    Id = 1, Name = "Alexander Borodach",
+                    Login = "login", Password = "mechanic",
+                    RoleId = 3
                 },
 
                  new User
                  {
-                     Id = 2,
-                     Name = "Petya Borodach",
-                     Login = "login",
-                     Password = "admin",
+                     Id = 2, Name = "Petya Borodach",
+                     Login = "login", Password = "admin",
                      RoleId = 2
                  }
-                 );        
+                 );
+            modelBuilder.Entity<CarType>().HasData(
+                new CarType { Id = 1, Name = "Sedan" },
+                new CarType { Id = 2, Name = "Coupe" },
+                new CarType { Id = 3, Name = "Universal" }
+                );
         }
 
     }
