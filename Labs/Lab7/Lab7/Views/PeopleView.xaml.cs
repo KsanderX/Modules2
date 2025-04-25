@@ -21,6 +21,7 @@ namespace Lab7.Views
         private void OpenWindow_Click(object sender, RoutedEventArgs e)
         {
             var window = new PeopleView();
+            window.DataContext = this.DataContext;
             window.Show();
         }
 
@@ -36,16 +37,23 @@ namespace Lab7.Views
 
         private void PushNewItem_Click(object sender, RoutedEventArgs e)
         {
-            var newPerson = new PersonModelSimple
+            try
             {
-                Id = vm.People.Max(p => p.Id) + 1,
-                Name = "New Person",
-                Birthday = DateTime.Now,
-                Description = "Just added"
-            };
-            vm.People.Add(newPerson);
-            vm.SelectedPerson = newPerson;
-            RefreshDataContext();
+                var newPerson = new PersonModelSimple
+                {
+                    Id = vm.People.Max(p => p.Id) + 1,
+                    Name = "New Person",
+                    Birthday = DateTime.Now,
+                    Description = "Just added"
+                };
+                vm.People.Add(newPerson);
+                vm.SelectedPerson = newPerson;
+                RefreshDataContext();
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Ошибка");
+            }
         }
         private void PopLastItem_Click(object sender, RoutedEventArgs e)
         {
