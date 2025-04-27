@@ -1,0 +1,33 @@
+﻿<Window x:Class="Var5.Views.AddRequestView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Var5.Views"
+        mc:Ignorable="d"
+        Title="AddRequestView" Height="450" Width="248">
+    <Grid Margin="4,0,1,0">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Center" Margin="0,17,0,17" Height="400" Width="126">
+            <Label Content="Тип товара"/>
+            <ComboBox ItemsSource="{Binding ProductType}" DisplayMemberPath="Name" SelectedValuePath="Id"
+                      SelectedValue="{Binding Request.ProductTypeId}"/>
+            <Label Content="Расстояние" />
+            <TextBox Text="{Binding Request.Distance}"/>
+            <Label Content="Количество товара" />
+            <TextBox Text="{Binding Request.Quantity}"/>
+            <Label Content="Поставщик"/>
+            <ComboBox ItemsSource="{Binding Provider}" DisplayMemberPath="Name" SelectedValuePath="Id"
+                      SelectedValue="{Binding Request.ProviderId}"/>
+            <Label Content="Номер телефона"/>
+            <TextBox Text="{Binding Request.PhoneNumber}"/>
+            <Label Content="Статус заказа"/>
+            <ComboBox ItemsSource="{Binding RequestStatus}" DisplayMemberPath="Name" SelectedValuePath="Id"
+                      SelectedValue="{Binding Request.RequestStatusId}"/>
+
+
+        </StackPanel>
+    </Grid>
+</Window>
