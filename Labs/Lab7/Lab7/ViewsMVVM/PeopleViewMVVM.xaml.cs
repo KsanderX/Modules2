@@ -63,5 +63,21 @@ namespace Lab7.ViewsMVVM
                 viewModel.People.RemoveAt(viewModel.People.Count - 1);
             }
         }
+
+        private void BeginProcess_Click(object sender, RoutedEventArgs e)
+        {
+            if(DataContext is PeopleViewModelMVVM vm)
+            {
+                vm.BeginProcess();
+            }
+        }
+
+        private void ResetProcess_Click(object sender, RoutedEventArgs e)
+        {
+            if(DataContext is PeopleViewModelMVVM vm)
+            {
+                vm.ResetProcess();
+            }
+        }
     }
 }

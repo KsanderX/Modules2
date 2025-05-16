@@ -1,24 +1,23 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Text;
 using System.Windows;
-using Var1.DataBase;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
-namespace Var1
+namespace Var1;
+
+/// <summary>
+/// Interaction logic for MainWindow.xaml
+/// </summary>
+public partial class MainWindow : Window
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public MainWindow()
     {
-        private AppDbContext _appDbContext;
-        public MainWindow(AppDbContext appDbContext)
-        {
-            InitializeComponent();
-            _appDbContext = appDbContext;
-        }
-        
-        private void Load()
-        {
-
-        }
+        InitializeComponent();
     }
 }

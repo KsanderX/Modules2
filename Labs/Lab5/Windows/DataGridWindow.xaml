@@ -7,13 +7,9 @@
         mc:Ignorable="d"
         Title="DataGridWindow" Height="417" Width="700">
     <Grid Margin="10,10,94,12">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Width="586" AutoGenerateColumns="True" Margin="20,75,0,0" Grid.ColumnSpan="2">
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Width="586" AutoGenerateColumns="True" Margin="20,75,0,0">
 
         </DataGrid>
-        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="20,31,0,0" VerticalAlignment="Top" Width="62" Click="btnSave_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="20,31,0,0" VerticalAlignment="Top" Width="62" Click="btnSave_Click"/>
     </Grid>
 </Window>

@@ -12,7 +12,9 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="8*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
@@ -42,6 +44,8 @@
         <Button Content="Change Selected Item" Grid.Column="1" Grid.Row="1" Margin="5" Click="Change_Selected_Click"/>
         <Button Content="Push New Item" Grid.Column="0" Grid.Row="2" Margin="5" Click="PushNewItem_Click"/>
         <Button Content="Pop Last Item" Grid.Column="1" Grid.Row="2" Margin="5" Click="PopLastItem_Click"/>
-
+        <Button Content="Reset Process" Grid.Column="1" Grid.Row="3" Margin="5" Click="ResetProcess_Click"/>
+        <Button Content="Begin Process" Grid.Column="0" Grid.Row="3" Margin="5" Click="BeginProcess_Click"/>
+        <ProgressBar Grid.Row="4" Margin="5" Grid.ColumnSpan="2" Value="{Binding PercentDone}"/>
     </Grid>
 </Window>

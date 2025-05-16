@@ -12,7 +12,7 @@ namespace Lab5
     {
         private IDbWorker _dbWorker;
         private Material _material;
-        public ListProducts(IDbWorker dbWorker, Material material)
+        public ListProducts(IDbWorker dbWorker, Models.Material material)
         {
             InitializeComponent();
             _dbWorker = dbWorker;

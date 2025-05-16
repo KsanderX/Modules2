@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Var1.DataBase
+namespace Var5.Models
 {
-    public class CarType
+    public class Responsible
     {
         public int Id { get; set; }
         public string Name { get; set; }

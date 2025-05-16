@@ -17,6 +17,8 @@ namespace Var5.Models
         public int ProviderId { get; set; }
         public Provider Provider { get; set; }
         public int PhoneNumber { get; set; }
+        public int ResponsibleId { get; set; }
+        public Responsible Responsible { get; set; }
         public int RequestStatusId { get; set; } = 1;
         public RequestStatus RequestStatus { get; set; }
     }

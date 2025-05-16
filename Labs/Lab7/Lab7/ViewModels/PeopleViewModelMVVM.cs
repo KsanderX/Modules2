@@ -29,5 +29,44 @@ namespace Lab7.ViewModels
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+        private int _percentDone;
+        private int PercentDone
+        {
+            get => _percentDone;
+            set
+            {
+                if (_percentDone != value)
+                {
+                    _percentDone = value;
+                    OnPropertyChanged(nameof(PercentDone));
+                }
+            }
+        }
+        private CancellationTokenSource? _cts;
+
+        public async void BeginProcess()
+        {
+            _cts = new CancellationTokenSource();
+            try
+            {
+                for (int i = PercentDone; i <= 100; i++)
+                {
+                    _cts.Token.ThrowIfCancellationRequested();
+                    await Task.Delay(100);
+                    PercentDone = i;
+                }
+            }
+            catch (OperationCanceledException)
+            {
+
+            }
+        }
+        public void ResetProcess()
+        {
+            _cts?.Cancel();
+            PercentDone = 0;
+        }
+
     }
 }

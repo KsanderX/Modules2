@@ -7,16 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="RequestsGrid" Margin="40,70,40,40" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Requests}" RenderTransformOrigin="0.507,0.491">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
-                <DataGridTextColumn Header="Number" Binding="{Binding Number}"/>
-                <DataGridTextColumn Header="Date" Binding="{Binding DateAdd}"/>
-                <DataGridTextColumn Header="Car Type" Binding="{Binding TypeCar}"/>
-                <DataGridTextColumn Header="Model" Binding="{Binding ModelCar}"/>
-                <DataGridTextColumn Header="Problem" Binding="{Binding ProblemDescription}"/>
-                <DataGridTextColumn Header="Phone" Binding="{Binding PhoneNumber}"/>
-            </DataGrid.Columns>
-        </DataGrid>    
+
     </Grid>
 </Window>

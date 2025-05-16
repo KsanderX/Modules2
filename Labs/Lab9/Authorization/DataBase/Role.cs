@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Var1.DataBase
+namespace Authorization.DataBase
 {
-    class Role
+    public class Role
     {
         public int Id { get; set; }
-        public string Type { get; set; }
+        public string? RoleName { get; set; }
     }
 }
