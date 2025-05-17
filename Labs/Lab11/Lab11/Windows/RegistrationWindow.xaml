@@ -1,0 +1,28 @@
+﻿<Window x:Class="Lab11.Windows.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab11.Windows"
+        mc:Ignorable="d"
+        Title="Registration" Height="450" Width="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <Label Content="Регистрация" FontSize="18" HorizontalAlignment="Center"/>
+
+            <TextBlock Text="ФИО" Margin="10,10,0,0" FontSize="16"/>
+            <TextBox x:Name="tbName" Margin="10,0,10,0" FontSize="16"/>
+
+            <TextBlock Text="Телефон" FontSize="16" Margin="10,10,0,0"/>
+            <TextBox x:Name="tbPhone" FontSize="16" Margin="10,0,10,0"/>         
+                        
+            <TextBlock Text="Логин" FontSize="16" Margin="10,10,0,0"/>
+            <TextBox Name="tbLogin" Width="200" Margin="10,0,10,0" FontSize="16"/>
+            
+            <TextBlock Text="Пароль" FontSize="16" Margin="10,10,0,0"/>
+            <PasswordBox Name="pbPassword" Width="200" Margin="10,0,10,0" FontSize="16"/>
+
+            <Button Name="btnRegister" Content="Зарегистрироваться" Width="160" Margin="10,10,0,0" FontSize="16" Click="btnRegister_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

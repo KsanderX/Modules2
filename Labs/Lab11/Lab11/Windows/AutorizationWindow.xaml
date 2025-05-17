@@ -1,0 +1,20 @@
+﻿<Window x:Class="Lab11.Windows.AutorizationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab11.Windows"
+        mc:Ignorable="d"
+        Title="Autorization" Height="450" Width="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <Label Content="Авторизация" FontSize="18" HorizontalAlignment="Center"/>
+            <Label Content="Login" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16"/>
+            <TextBox Text="user" Name="tbLogin" Width="200" Margin="10,0,10,0" VerticalAlignment="Top" FontSize="16"/>
+            <Label Content="Password" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16"/>
+            <TextBox Text="user" Name="tbPassword" Width="200" Margin="10,0,10,0" VerticalAlignment="Top" FontSize="16"/>
+            <Button Name="btnLogin" Content="Войти" Width="100" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16" Click="btnLogin_Click"/>
+            <Button Name="btnRegister" Content="Зарегистрироваться" Width="160" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16" Click="btnRegister_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

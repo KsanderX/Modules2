@@ -1,0 +1,18 @@
+<Window x:Class="Lab11.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Главная" Height="450" Width="800">
+    <Grid>
+        <ListView x:Name="BooksListView" Margin="10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}" Width="150"/>
+                    <GridViewColumn Header="Жанр" DisplayMemberBinding="{Binding Genre}" Width="100"/>
+                    <GridViewColumn Header="Описание" DisplayMemberBinding="{Binding Description}" Width="250"/>
+                    <GridViewColumn Header="Дата выпуска" DisplayMemberBinding="{Binding BookReleaseDate}" Width="120"/>
+                    <GridViewColumn Header="Статус" DisplayMemberBinding="{Binding Status.Name}" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
