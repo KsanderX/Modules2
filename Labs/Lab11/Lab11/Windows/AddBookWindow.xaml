@@ -1,0 +1,26 @@
+﻿<Window x:Class="Lab11.Windows.AddBookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Добавить книгу" Height="528" Width="358">
+    <Grid Margin="10,0,10,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="10,0,10,10">
+            <Label Content="Добавление книги" HorizontalAlignment="Center" FontSize="28"/>
+            <Label Content="Введите название книги:" FontSize="16"/>
+            <TextBox Text="{Binding Book.Name}" Height="30" FontSize="18"/>
+            <Label Content="Жанр книги:" FontSize="16"/>
+            <TextBox Text="{Binding Book.Genre}" Height="30" FontSize="18"/>
+            <Label Content="Описание книги:" FontSize="16"/>
+            <TextBox Text="{Binding Book.Description}" Height="30" FontSize="18"/>
+            <Label FontSize="16" Content="Дата выпуска:"/>
+            <DatePicker FontSize="18" SelectedDate="{Binding Book.BookReleaseDate}"/>
+            <Label Content="Кому выдать книгу:" FontSize="16"/>
+            <ComboBox Height="30" ItemsSource="{Binding Users}" DisplayMemberPath="Display" SelectedValuePath="Id" SelectedValue="{Binding Book.UserId}"/>
+            <Label Content="Выберите статус книги:" FontSize="16"/>
+            <ComboBox Height="30" ItemsSource="{Binding Statuses}" DisplayMemberPath="Name" SelectedValuePath="Id" SelectedValue="{Binding Book.StatusId}"/>
+            <Button Margin=" 0 10 0 0" Content="Создать книгу" Height="30" Click="btnCreateBook_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

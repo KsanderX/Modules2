@@ -14,7 +14,7 @@ namespace Lab11.Models
         public DbSet<Status> Statuses { get; set; }
         public AppDbContext()
         {
-            Database.EnsureDeleted();   
+            //Database.EnsureDeleted();
             Database.EnsureCreated();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -24,12 +24,12 @@ namespace Lab11.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasData(
-                new User { Id = 1, Login = "admin", Password = "admin", Name = "Admin", RegistrationDate = DateTime.Now, PhoneNumber = "1234567890" },
-                new User { Id = 2, Login = "user", Password = "user", Name = "User", RegistrationDate = DateTime.Now, PhoneNumber = "0987654321" }
+                new User { Id = 1, Login = "admin", Password = "admin", Name = "Sanya", RegistrationDate = DateOnly.FromDateTime(DateTime.Now), PhoneNumber = "1234567890" },
+                new User { Id = 2, Login = "user", Password = "user", Name = "Vanya", RegistrationDate = DateOnly.FromDateTime(DateTime.Now), PhoneNumber = "0987654321" }
             );
             modelBuilder.Entity<Book>().HasData(
-                new Book { Id = 1, Name = "Book1", Genre = "Genre1", Description = "Description1", BookReleaseDate = DateTime.Now, UserId = 1, StatusId = 2 },
-                new Book { Id = 2, Name = "Book2", Genre = "Genre2", Description = "Description2", BookReleaseDate = DateTime.Now, UserId = 1, StatusId = 3 }
+                new Book { Id = 1, Name = "HarryPotter", Genre = "Fantasy", Description = "Description1", BookReleaseDate = DateTime.Now, UserId = 1, StatusId = 2 },
+                new Book { Id = 2, Name = "Ono", Genre = "Horrors", Description = "Description2", BookReleaseDate = DateTime.Now, UserId = 1, StatusId = 3 }
             );
             modelBuilder.Entity<Status>().HasData(
                 new Status { Id = 1, Name = "В наличии" },

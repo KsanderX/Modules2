@@ -12,10 +12,10 @@ namespace Lab11.Models
         public string? Name { get; set; }
         public string? Genre { get; set; }
         public string? Description { get; set; }
-        public DateTime BookReleaseDate { get; set; }        
-        public User? Users { get; set; }
+        public DateTime BookReleaseDate { get; set; } = DateTime.Now;       
+        public User? User { get; set; }
         public int UserId { get; set; }
         public Status? Status { get; set; }
-        public int StatusId { get; set; }
+        public int StatusId { get; set; }     
     }
 }

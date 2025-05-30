@@ -23,15 +23,15 @@ namespace Lab11.Windows
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             string login = tbLogin.Text;
-            string password = tbPassword.Text;
+            string password = tbPassword.Password;
 
             bool isAuthorized = _autorizationService.Autorization(login, password);
 
             if (isAuthorized)
             {
                 MainWindow mainWindow = _serviceProvider.GetRequiredService<MainWindow>();
-                mainWindow.Show();
                 this.Close();
+                mainWindow.Show();
             }
             else
             {
@@ -42,6 +42,7 @@ namespace Lab11.Windows
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             var registrationWindow = _serviceProvider.GetRequiredService<RegistrationWindow>();
+            this.Close();
             registrationWindow.ShowDialog();
         }
     }

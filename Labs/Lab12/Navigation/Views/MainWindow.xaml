@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Navigation.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Navigation.Views"
+        mc:Ignorable="d"
+        Height="426" Width="800">
+    <DockPanel>
+        <TextBlock Text="Список продуктов" FontSize="20" FontWeight="Bold" 
+               HorizontalAlignment="Center" Margin="10" DockPanel.Dock="Top"/>
+
+        <Grid Margin="10" Height="395">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="23*"/>
+                <RowDefinition Height="116*"/>
+            </Grid.RowDefinitions>
+
+
+            <ListView ItemsSource="{Binding Product}" SelectedItem="{Binding SelectedProduct}" Foreground="Black" Width="Auto" Grid.Row="1" Margin="0,26,0,117">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" Width="Auto" />
+                        <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding Name}" Width="Auto"/>
+                        <GridViewColumn Header="Описание" DisplayMemberBinding="{Binding Description}" Width="Auto"/>
+                        <GridViewColumn Header="Дата создания" DisplayMemberBinding="{Binding DateOfCreation}" Width="Auto"/>
+                        <GridViewColumn Header="Дата редактирования" DisplayMemberBinding="{Binding DateOfLastEdit}" Width="Auto"/>
+                        <GridViewColumn Header="Материал" DisplayMemberBinding="{Binding Material.Name}" Width="Auto"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,21" Grid.Row="0" Width="397">
+                <Button Content="Добавить продукт" Command="{Binding AddProductCommand}" Margin="5" Width="120"/>
+                <Button Content="Изменить продукт" Command="{Binding EditProductCommand}" CommandParameter="{Binding SelectedProduct}" Margin="5" Width="120"/>
+                <Button Content="Удалить продукт" Command="{Binding DeleteProductCommand}" Margin="5" Width="120"/>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</UserControl>

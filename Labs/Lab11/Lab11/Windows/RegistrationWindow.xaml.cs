@@ -36,16 +36,19 @@ namespace Lab11.Windows
         
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            var user = new User
+            User user = new User
             {
                 Login = tbLogin.Text,
                 Password = pbPassword.Password,
                 Name = tbName.Text,
                 PhoneNumber = tbPhone.Text,
-                RegistrationDate = DateTime.Now
+                RegistrationDate = DateOnly.FromDateTime(DateTime.Now)
             };
             _registrationService.RegAccount(user);
             MessageBox.Show("Пользователь успешно зарегистрирован!");
+            var autorizationWindow = _serviceProvider.GetRequiredService<AutorizationWindow>();
+            this.Close();
+            autorizationWindow.ShowDialog();
         }
     }
 }

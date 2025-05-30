@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using Lab11.Models;
 using Lab11.Services;
+using Lab11.ViewModel;
 using Lab11.Windows;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -19,8 +20,11 @@ namespace Lab11
             services.AddTransient<AutorizationWindow>();
             services.AddTransient<MainWindow>();
             services.AddTransient<RegistrationWindow>();
+            services.AddTransient<AddBookWindow>();
+            services.AddTransient<AddBookViewModel>();
             services.AddScoped<IAutorizationService, AutorizationService>();
             services.AddScoped<IRegistrationService, RegistrationService>();
+            services.AddScoped<IAddBooksService, AddBooks>();   
             _serviceProvider = services.BuildServiceProvider();
         }
         protected override void OnStartup(StartupEventArgs e)

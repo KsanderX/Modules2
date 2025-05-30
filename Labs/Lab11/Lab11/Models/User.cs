@@ -9,11 +9,12 @@ namespace Lab11.Models
     public class User
     {
         public int Id { get; set; }
-        public string? Login { get; set; }
-        public string? Password { get; set; }
-        public string? Name { get; set; }
-        public DateTime RegistrationDate { get; set; }
-        public string? PhoneNumber { get; set; }
-        public List<Book>? Books { get; set; } 
+        public string Login { get; set; }  
+        public string Password { get; set; }
+        public string Name { get; set; }
+        public DateOnly RegistrationDate { get; set; }
+        public string PhoneNumber { get; set; }
+        public List<Book> Books { get; set; }
+        public string Display => $"{Id} - {Name}";
     }
 }

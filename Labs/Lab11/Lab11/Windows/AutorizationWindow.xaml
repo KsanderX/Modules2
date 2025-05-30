@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab11.Windows"
         mc:Ignorable="d"
-        Title="Autorization" Height="450" Width="800">
-    <Grid>
-        <StackPanel HorizontalAlignment="Center">
+        Title="Autorization" Height="292" Width="325">
+    <Grid Margin="0,0,10,7">
+        <StackPanel HorizontalAlignment="Center" Background="GhostWhite" Margin="0,0,0,10" Width="229">
             <Label Content="Авторизация" FontSize="18" HorizontalAlignment="Center"/>
             <Label Content="Login" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16"/>
             <TextBox Text="user" Name="tbLogin" Width="200" Margin="10,0,10,0" VerticalAlignment="Top" FontSize="16"/>
             <Label Content="Password" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16"/>
-            <TextBox Text="user" Name="tbPassword" Width="200" Margin="10,0,10,0" VerticalAlignment="Top" FontSize="16"/>
+            <PasswordBox Name="tbPassword" Width="200" Margin="10,0,10,0" VerticalAlignment="Top" FontSize="16"/>
             <Button Name="btnLogin" Content="Войти" Width="100" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16" Click="btnLogin_Click"/>
             <Button Name="btnRegister" Content="Зарегистрироваться" Width="160" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16" Click="btnRegister_Click"/>
         </StackPanel>
