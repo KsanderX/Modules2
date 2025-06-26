@@ -11,7 +11,6 @@ namespace Lab5
     {
         private IEnumerable _itemsSource;
         private AppDbContext _context;
-        //sada
         public DataGridWindow(IEnumerable itemSourse, AppDbContext context)
         {
             InitializeComponent();
@@ -23,6 +22,7 @@ namespace Lab5
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             _context.SaveChanges();
+            MessageBox.Show("Changes saved successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

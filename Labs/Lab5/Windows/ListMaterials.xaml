@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab5"
         mc:Ignorable="d"
-        Title="ListMaterials" Height="450" Width="800">
-    <Grid>
+        Title="ListMaterials" Height="450" Width="380">
+    <Grid Margin="0,0,10,0">
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="btnSave_Click" Height="28" Width="81"/>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="10,43,258,37">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="10,43,10,37">
             <StackPanel x:Name="stackPanel"/>
         </ScrollViewer>
 

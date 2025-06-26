@@ -1,4 +1,5 @@
-﻿using Lab5.Models;
+﻿using System.Windows;
+using Lab5.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Lab5.Services
@@ -36,6 +37,7 @@ namespace Lab5.Services
         public void SaveChanged()
         {
             _appDbContext.SaveChanges();
+            MessageBox.Show("Changes saved successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

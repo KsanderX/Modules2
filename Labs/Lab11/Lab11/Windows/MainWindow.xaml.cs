@@ -37,6 +37,7 @@ namespace Lab11
             if (BooksListView.SelectedItem is Book selectedBook)
             {
                 _addBooksService.DeleteBook(selectedBook);
+                _addBooksService.Save();
                 LoadBooks();
             }
             else
@@ -57,6 +58,20 @@ namespace Lab11
             var addBookWindow = _serviceProvider.GetRequiredService<AddBookWindow>();
             this.Close();
             addBookWindow.ShowDialog();
+        }
+
+        private void btnEditBooks_Clickbtn(object sender, RoutedEventArgs e)
+        {
+            if (BooksListView.SelectedItem is Book selectedBook)
+            {
+                var editBookWindow = new EditBooksWindow(_addBooksService, selectedBook);
+                editBookWindow.ShowDialog();
+                LoadBooks(); 
+            }
+            else
+            {
+                MessageBox.Show("Выберите книгу для редактирования.");
+            }
         }
     }
 }

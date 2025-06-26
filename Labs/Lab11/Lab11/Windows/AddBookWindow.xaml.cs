@@ -11,7 +11,7 @@ namespace Lab11.Windows
     /// </summary>
     public partial class AddBookWindow : Window
     {
-        private IServiceProvider _serviceProvider;       
+        private IServiceProvider _serviceProvider;
         private IAddBooksService _addBooksService;
         public AddBookWindow(IServiceProvider serviceProvider, IAddBooksService addBooksService)
         {
@@ -19,7 +19,7 @@ namespace Lab11.Windows
             _serviceProvider = serviceProvider;
             _addBooksService = addBooksService;
             DataContext = _serviceProvider.GetRequiredService<AddBookViewModel>();
-        }     
+        }
 
         private void btnCreateBook_Click(object sender, RoutedEventArgs e)
         {
@@ -34,6 +34,7 @@ namespace Lab11.Windows
                 StatusId = viewModel.Book.StatusId
             };
             _addBooksService.CreateBook(book);
+            _addBooksService.Save(); 
             var mainWindow = _serviceProvider.GetRequiredService<MainWindow>();
             mainWindow.LoadBooks();
             this.Close();

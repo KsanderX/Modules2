@@ -21,10 +21,11 @@ namespace Lab11
             services.AddTransient<MainWindow>();
             services.AddTransient<RegistrationWindow>();
             services.AddTransient<AddBookWindow>();
+            services.AddTransient<EditBooksWindow>();
             services.AddTransient<AddBookViewModel>();
             services.AddScoped<IAutorizationService, AutorizationService>();
             services.AddScoped<IRegistrationService, RegistrationService>();
-            services.AddScoped<IAddBooksService, AddBooks>();   
+            services.AddScoped<IAddBooksService, AddBooksService>();   
             _serviceProvider = services.BuildServiceProvider();
         }
         protected override void OnStartup(StartupEventArgs e)

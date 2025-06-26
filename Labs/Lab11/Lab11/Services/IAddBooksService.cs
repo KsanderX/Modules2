@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using Lab11.Models;
 
 namespace Lab11.Services
@@ -16,5 +11,6 @@ namespace Lab11.Services
         public ObservableCollection<Book> GetBook();
         public void Save();
         public void DeleteBook(Book book);
+        public void UpdateBook(Book book);
     }
 }

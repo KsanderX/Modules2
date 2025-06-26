@@ -31,8 +31,9 @@
                 </ListView.View>
             </ListView>
             
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,21" Grid.Row="0" Width="397">
-                <Button Content="Добавить книгу" Click="btnAddBooks_Clickbtn" Margin="5" Width="120"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,21" Grid.Row="0" Width="558">
+                <Button Content="Добавить книгу" Click="btnAddBooks_Clickbtn" Margin="5" Width="120" RenderTransformOrigin="0.004,0.514"/>
+                <Button Content="Изменить книгу" Click="btnEditBooks_Clickbtn" Margin="5" Width="120" RenderTransformOrigin="0.004,0.514"/>
                 <Button Content="Удалить книгу" Click="btnDeleteBook_Click" Margin="5" Width="120"/>
                 <Button Content="Выйти из аккаунта" Click="btnLogout_Clickbtn" Margin="5" Width="120"/>
             </StackPanel>
